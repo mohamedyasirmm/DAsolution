@@ -1,0 +1,65 @@
+Sub copy()
+  Workbooks("Raw Data.xlsx").Worksheets("Raw Data Partner B").Range("D2:J31").copy _
+    ThisWorkbook.Worksheets("spend data").Range("K34:Q63")
+    
+End Sub
+
+------------------------------------------------------------------------------------------------------
+
+Sub copy1()
+    Workbooks("Raw Data.xlsx").Worksheets("Raw Data Partner D").Range("B2:E31,G2:I31").copy _
+        ThisWorkbook.Worksheets("spend data").Range("AC34:AI63")
+End Sub
+--------------------------------------------------------------------------------------------------------
+Sub copy2()
+    Workbooks("Raw Data.xlsx").Worksheets("Raw Data Partner E").Range("A2:G31").copy _
+        ThisWorkbook.Worksheets("spend data").Range("AL34:AR63")
+End Sub
+---------------------------------------------------------------------------------------------------------
+Sub copy3()
+    Workbooks("Raw Data.xlsx").Worksheets("Raw Data Partner A").Range("B2:E31,G2:I31").copy _
+        ThisWorkbook.Worksheets("spend data").Range("B34:H63")
+End Sub
+----------------------------------------------------------------------------------------------------------
+Sub copy4()
+    Workbooks("Raw Data.xlsx").Worksheets("Raw Data Partner  C").Range("D2:G31").copy _
+        ThisWorkbook.Worksheets("spend data").Range("T34:W63")
+End Sub
+-----------------------------------------------------------------------------------------------------------
+Sub Sum_multiple_columns
+
+ThisWorkbook.Worksheets("spend data").Range("AY34:AY63").Formula = "=AV34/AX34"
+End Sub
+------------------------------------------------------------------------------------------------------------
+Sub total()
+ThisWorkbook.Worksheets("spend data").Range("AU34:AX63").Formula = "=SUM(B34+K34+T34+AC34+AL34)"
+End Sub
+-------------------------------------------------------------------------------------------------------------
+Sub metrics()
+
+ThisWorkbook.Worksheets("spend data").Range("AZ34:AZ63").Formula = "=AV34/AW34"
+
+ThisWorkbook.Worksheets("spend data").Range("BA34:BA63").Formula = "=AW34/AU34"
+
+ThisWorkbook.Worksheets("spend data").Range("BB34:BB63").Formula = "=AX34/AW34"
+
+ThisWorkbook.Worksheets("spend data").Range("BC34:BC63").Formula = "=AV34/(AU34/1000)"
+
+End Sub
+---------------------------------------------------------------------------------------------------------------
+Option Explicit
+
+Public Sub findvalue()
+
+Dim rng As Range, cell As Range
+
+Set rng = Range("A4:P19")
+    
+For Each cell In rng
+    If cell.Interior.ColorIndex > 0 Then ThisWorkbook.Worksheets("part 8 of test").Range("S4").Value = cell.Value
+    
+Next cell
+    
+End Sub
+
+----------------------------------------------------------------------------------------------------------------------
